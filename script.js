@@ -16,19 +16,17 @@
 
   cw1.addEventListener("click", function () {
      answer.textContent = 'Loading...'
-     fetch('https://jsonplaceholder.typicode.com/posts')
+     fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then(response => response.json())
-      .then(posts => {
+      .then(p => {
         const parts = ['<ul style="list-style:none;padding:0;margin:0">']
-        posts.forEach(p => {
-          parts.push(
-            '<li style="border:1px solid #ddd;padding:8px;margin:8px 0;border-radius:4px">' +
-            '<h3 style="margin:0 0 6px 0">' + p.title + ' <small style="color:#666">#' + p.id + '</small></h3>' +
-            '<p style="margin:0 0 6px 0">' + p.body + '</p>' +
-            '<div style="font-size:12px;color:#444">User: ' + p.userId + '</div>' +
-            '</li>'
-          )
-        })
+        parts.push(
+          '<li style="border:1px solid #ddd;padding:8px;margin:8px 0;border-radius:4px">' +
+          '<h3 style="margin:0 0 6px 0">' + p.title + ' <small style="color:#666">#' + p.id + '</small></h3>' +
+          '<p style="margin:0 0 6px 0">' + p.body + '</p>' +
+          '<div style="font-size:12px;color:#444">User: ' + p.userId + '</div>' +
+          '</li>'
+        )
         parts.push('</ul>')
         answer.innerHTML = parts.join('')
       })
