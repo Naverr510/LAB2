@@ -52,7 +52,35 @@
   })
 
   cw3.addEventListener("click", function () {
-    //TODO
+     fetch('https://my-json-server.typicode.com/Naverr510/LAB2/posts')
+      .then(response => response.json())
+      .then(posts => {
+        fetch('https://my-json-server.typicode.com/Naverr510/LAB2/comments')
+          .then(response => response.json())
+          .then(comments => {
+            const byPost = {}
+            comments.forEach(c => {
+              (byPost[c.postId] = byPost[c.postId] || []).push(c)
+            })
+            const parts = ['<div>']
+            posts.forEach(p => {
+              parts.push('<section style="border:1px solid #ddd;padding:8px;margin:8px 0;border-radius:6px">')
+              parts.push('<h3 style="margin:0 0 6px 0">' + p.title + ' <small style="color:#666">#' + p.id + '</small></h3>')
+              parts.push('<p style="margin:0 0 6px 0">' + p.body + '</p>')
+              const comms = byPost[p.id] || []
+              if (comms.length) {
+                parts.push('<div style="margin-top:8px"><strong>Comments:</strong><ul style="margin:6px 0 0 18px">')
+                comms.forEach(c => {
+                  parts.push('<li style="margin-bottom:6px"><strong>' + c.name + '</strong> <em>(' + c.email + ')</em><div>' + c.body + '</div></li>')
+                })
+                parts.push('</ul></div>')
+              }
+              parts.push('</section>')
+            })
+            parts.push('</div>')
+            answer.innerHTML = parts.join('')
+          })
+      })
   })
 
 })();
