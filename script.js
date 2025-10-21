@@ -30,10 +30,12 @@
   })
 
   cw2.addEventListener("click", function () {
-    answer.textContent = 'Loading...'
+    alert('Loading')
+    //answer.textContent = 'Loading...'
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(posts => {
+        console.log(posts)
         const parts = ['<div style="display:flex;flex-wrap:wrap;gap:12px">']
         posts.slice(0, 12).forEach(p => {
           parts.push(
