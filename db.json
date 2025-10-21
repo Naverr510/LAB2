@@ -1,0 +1,78 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Pierwszy post",
+      "body": "To jest treść pierwszego postu.",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Drugi post",
+      "body": "Krótka treść drugiego postu.",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "title": "Nowość: ciekawostka",
+      "body": "Kilka zdań o ciekawostce technicznej.",
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "title": "Aktualizacja projektu",
+      "body": "Informacje o najnowszych zmianach w projekcie.",
+      "userId": 3
+    },
+    {
+      "id": 5,
+      "title": "Pogoda dziś",
+      "body": "Krótka notka pogodowa.",
+      "userId": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "name": "Jan Kowalski",
+      "email": "jan.kowalski@example.com",
+      "body": "Świetny post! Dziękuję za informację."
+    },
+    {
+      "id": 2,
+      "postId": 1,
+      "name": "Anna Nowak",
+      "email": "anna.nowak@example.com",
+      "body": "Mam pytanie dotyczące drugiego akapitu."
+    },
+    {
+      "id": 3,
+      "postId": 2,
+      "name": "Piotr Zalewski",
+      "email": "piotr.z@example.com",
+      "body": "Krótka, ale treściwa notka."
+    },
+    {
+      "id": 4,
+      "postId": 3,
+      "name": "Marta Wiśniewska",
+      "email": "marta.w@example.com",
+      "body": "Bardzo ciekawy temat, dzięki za podzielenie się."
+    },
+    {
+      "id": 5,
+      "postId": 4,
+      "name": "Tomasz",
+      "email": "tomasz@example.com",
+      "body": "Dziękuję za aktualizację — przyda się."
+    },
+    {
+      "id": 6,
+      "postId": 5,
+      "name": "Kasia",
+      "email": "kasia@example.com",
+      "body": "Zgadzam się z autorem."
+    }
+  ]
+}
