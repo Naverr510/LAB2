@@ -15,7 +15,22 @@
   })
 
   cw1.addEventListener("click", function () {
-    //TODO
+     fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(posts => {
+        const parts = ['<ul style="list-style:none;padding:0;margin:0">']
+        posts.forEach(p => {
+          parts.push(
+            '<li style="border:1px solid #ddd;padding:8px;margin:8px 0;border-radius:4px">' +
+            '<h3 style="margin:0 0 6px 0">' + p.title + ' <small style="color:#666">#' + p.id + '</small></h3>' +
+            '<p style="margin:0 0 6px 0">' + p.body + '</p>' +
+            '<div style="font-size:12px;color:#444">User: ' + p.userId + '</div>' +
+            '</li>'
+          )
+        })
+        parts.push('</ul>')
+        answer.innerHTML = parts.join('')
+      })
   })
 
   cw2.addEventListener("click", function () {
